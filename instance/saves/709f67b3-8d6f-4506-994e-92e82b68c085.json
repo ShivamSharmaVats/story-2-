@@ -1,0 +1,46 @@
+{
+  "slot_id": "709f67b3-8d6f-4506-994e-92e82b68c085",
+  "saved_at": "2026-03-19T03:27:01.743659Z",
+  "state": {
+    "current_scene": "p006_exam_and_call",
+    "started": true,
+    "inventory": {
+      "cash": 0,
+      "forgotten_tears": 0,
+      "gold_coin": 0,
+      "holy_water": 0,
+      "perfect_herb": 0,
+      "wine_lux": 0,
+      "wine_shady": 0
+    },
+    "flags": {
+      "chose_study_first": false,
+      "opening_capture": "bishop"
+    },
+    "path": [
+      {
+        "choice_id": "play_on",
+        "choice_label": "Keep playing the endgame",
+        "scene_id": "p001_intro",
+        "scene_title": "Late-Night Gambit"
+      },
+      {
+        "choice_id": "capture_bishop",
+        "choice_label": "Capture the bishop",
+        "scene_id": "p003_endgame_choice",
+        "scene_title": "Rook Decision"
+      },
+      {
+        "choice_id": "auto_continue",
+        "choice_label": "Continue",
+        "scene_id": "p005_bishop_loss",
+        "scene_title": "Slow Punishment"
+      }
+    ],
+    "endings_seen": [],
+    "chapters_seen": [
+      "Chapter 1: Opening Move",
+      "Chapter 2: Midgame Chaos"
+    ]
+  }
+}

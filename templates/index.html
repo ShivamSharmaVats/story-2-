@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Gambit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Manrope:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body>
+    <div class="bg-layer bg-one"></div>
+    <div class="bg-layer bg-two"></div>
+    <div class="noise-layer"></div>
+
+    <main class="app-shell" id="app-shell">
+      <section class="title-screen" id="title-screen">
+        <div class="title-card fade-in">
+          <p class="eyebrow">Interactive Chess Adventure</p>
+          <h1>The Gambit</h1>
+          <p class="subtitle">
+            A branching story of pressure, patience, and the moves that shape a life.
+          </p>
+
+          <div class="title-actions">
+            <button id="btn-start" class="btn btn-primary">Start Game</button>
+            <button id="btn-continue" class="btn btn-secondary">Continue</button>
+            <button id="btn-load-menu" class="btn btn-secondary">Load Save</button>
+          </div>
+
+          <div class="title-meta">
+            <p id="title-status">No active run loaded.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="game-screen hidden" id="game-screen">
+        <header class="hud">
+          <div class="hud-left">
+            <h2 id="hud-chapter">Chapter</h2>
+            <p id="hud-scene-title">Scene</p>
+          </div>
+          <div class="hud-center">
+            <div class="progress-wrap">
+              <label for="progress-bar">Journey Progress</label>
+              <progress id="progress-bar" max="100" value="0"></progress>
+              <span id="progress-label">0%</span>
+            </div>
+          </div>
+          <div class="hud-right">
+            <button id="btn-save" class="btn btn-small">Save</button>
+            <button id="btn-load" class="btn btn-small">Load</button>
+            <button id="btn-restart" class="btn btn-small btn-danger">Restart</button>
+          </div>
+        </header>
+
+        <section class="scene-panel" id="scene-panel">
+          <div class="scene-tags" id="scene-tags"></div>
+          <article class="scene-text" id="scene-text"></article>
+
+          <section class="choices-panel" id="choices-panel">
+            <h3>Choices</h3>
+            <div id="choices-list" class="choices-list"></div>
+          </section>
+        </section>
+
+        <aside class="side-panel">
+          <section class="inventory-card">
+            <h3>Inventory</h3>
+            <ul id="inventory-list"></ul>
+          </section>
+
+          <section class="stats-card">
+            <h3>Run Stats</h3>
+            <ul id="stats-list"></ul>
+          </section>
+
+          <section class="path-card">
+            <h3>Path Tracker</h3>
+            <ol id="path-list"></ol>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <section class="modal hidden" id="save-modal" aria-hidden="true">
+      <div class="modal-card">
+        <h3>Load Save Slot</h3>
+        <p class="modal-sub">Pick a saved run to continue.</p>
+        <ul id="save-slot-list" class="save-slot-list"></ul>
+        <div class="modal-actions">
+          <button id="btn-close-modal" class="btn btn-secondary">Close</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="modal hidden" id="ending-modal" aria-hidden="true">
+      <div class="modal-card ending-card">
+        <h3 id="ending-title">Ending</h3>
+        <p id="ending-summary"></p>
+        <h4>Path Taken</h4>
+        <ol id="ending-path"></ol>
+        <div class="modal-actions">
+          <button id="btn-ending-restart" class="btn btn-primary">Play Again</button>
+          <button id="btn-ending-close" class="btn btn-secondary">Keep Exploring</button>
+        </div>
+      </div>
+    </section>
+
+    <audio id="ambient-audio" loop preload="none">
+      <source src="" type="audio/mpeg" />
+    </audio>
+
+    <script src="/static/js/game.js" defer></script>
+  </body>
+</html>
