@@ -36,6 +36,7 @@ const els = {
   progressLabel: document.getElementById("progress-label"),
 
   sceneTags: document.getElementById("scene-tags"),
+  sceneArt: document.getElementById("scene-art"),
   sceneText: document.getElementById("scene-text"),
   choicesList: document.getElementById("choices-list"),
 
@@ -181,6 +182,20 @@ function renderChoices(choices) {
   }
 }
 
+function renderAsciiArt(artPayload) {
+  els.sceneArt.innerHTML = "";
+  const items = artPayload || [];
+
+  for (const item of items) {
+    const card = document.createElement("div");
+    card.className = "ascii-card";
+    const pre = document.createElement("pre");
+    pre.textContent = item.text || "";
+    card.appendChild(pre);
+    els.sceneArt.appendChild(card);
+  }
+}
+
 function renderInventory(inventory) {
   els.inventoryList.innerHTML = "";
   const printable = Object.entries(inventory || {});
@@ -311,6 +326,7 @@ async function renderSceneAndState(scene, state) {
   (scene.tags || []).forEach((tag) => {
     els.sceneTags.appendChild(createTagPill(tag));
   });
+  renderAsciiArt(scene.ascii_art || []);
 
   await renderSceneText(scene.text || []);
   renderChoices(scene.choices || []);

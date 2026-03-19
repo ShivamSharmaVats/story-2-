@@ -21,6 +21,7 @@ A polished, fully playable choice-based adventure game in Python 3 with a Flask 
 - Inventory and branch-flag state system
 - Save/load slots (file-based under `instance/saves`)
 - Path tracker + ending summary modal
+- Scene-specific ASCII art illustrations (terminal-style image cards)
 - Typewriter text effect + transitions + animated background
 - Responsive layout for laptop and smaller screens
 
@@ -102,4 +103,3 @@ python3 app.py
 3. Add achievement system and branching map visualization.
 4. Add autosave snapshots per chapter and multiple profile support.
 5. Add optional voice-over + ambient soundtrack packs.
-

@@ -276,6 +276,27 @@ progress::-webkit-progress-value {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.scene-art {
+  display: grid;
+  gap: 10px;
+}
+
+.ascii-card {
+  background: rgba(0, 0, 0, 0.24);
+  border: 1px solid rgba(127, 209, 190, 0.28);
+  border-radius: 12px;
+  padding: 12px;
+  overflow: auto;
+}
+
+.ascii-card pre {
+  margin: 0;
+  color: #d8efe9;
+  font-size: 0.74rem;
+  line-height: 1.25;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
 .story-paragraph {
   margin: 0 0 14px;
   opacity: 0;

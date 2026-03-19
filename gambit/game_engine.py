@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from .ascii_art import get_scene_art
 from .models import Choice, GameState, Scene
 from .story_data import START_SCENE_ID, build_story
 
@@ -106,6 +107,7 @@ class GameEngine:
             "title": scene.title,
             "chapter": scene.chapter,
             "text": scene.text,
+            "ascii_art": get_scene_art(scene.id, scene.tags),
             "tags": scene.tags,
             "choices": choices,
             "ending": scene.ending,
